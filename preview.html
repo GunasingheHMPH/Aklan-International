@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Aklan International (Pvt) Ltd provides electrical engineering solutions, electrical equipment supply, industrial electrical products, technical services, and online ordering."
+    />
+    <title>Aklan International (Pvt) Ltd</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: #071426;
+        color: #fff;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      a { color: inherit; text-decoration: none; }
+      .nav {
+        position: fixed; inset: 0 0 auto; z-index: 30; padding: 16px;
+      }
+      .nav-inner {
+        max-width: 1280px; margin: auto; display: flex; align-items: center; justify-content: space-between;
+        gap: 18px; border: 1px solid rgb(103 232 249 / .25); border-radius: 999px;
+        background: rgb(6 22 47 / .86); color: #fff; padding: 12px 18px;
+        box-shadow: 0 24px 70px rgb(8 47 73 / .35); backdrop-filter: blur(16px);
+      }
+      .brand { display: flex; align-items: center; gap: 12px; min-width: 0; font-weight: 900; }
+      .brand-logo { width: 42px; height: 42px; overflow: hidden; border-radius: 999px; background: #fff; }
+      .brand-logo img { width: 100%; height: 100%; object-fit: cover; }
+      .nav-links { display: flex; gap: 22px; color: #dbeafe; font-size: 14px; font-weight: 700; }
+      .button {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px;
+        border-radius: 999px; padding: 0 22px; background: #67e8f9; color: #06162f;
+        font-size: 14px; font-weight: 950; border: 0;
+      }
+      .button.secondary { background: rgb(255 255 255 / .1); color: #fff; border: 1px solid rgb(255 255 255 / .26); }
+      .hero {
+        position: relative; min-height: 100vh; overflow: hidden; display: grid; align-items: center;
+        padding: 112px 24px 70px;
+      }
+      .hero::before {
+        content: ""; position: absolute; inset: 0;
+        background: #06162f;
+      }
+      .slide {
+        position: absolute; inset: 0; background-position: center; background-size: cover;
+        opacity: 0; animation: preview-slideshow 35s infinite; transform: scale(1.02);
+      }
+      .slide:nth-child(1) { animation-delay: 0s; }
+      .slide:nth-child(2) { animation-delay: 5s; }
+      .slide:nth-child(3) { animation-delay: 10s; }
+      .slide:nth-child(4) { animation-delay: 15s; }
+      .slide:nth-child(5) { animation-delay: 20s; }
+      .slide:nth-child(6) { animation-delay: 25s; }
+      .slide:nth-child(7) { animation-delay: 30s; }
+      @keyframes preview-slideshow {
+        0%, 12% { opacity: 1; transform: scale(1); }
+        17%, 100% { opacity: 0; transform: scale(1.045); }
+      }
+      .hero::after {
+        content: ""; position: absolute; inset: 0;
+        background: linear-gradient(90deg, rgb(6 22 47 / .96), rgb(6 22 47 / .74), rgb(6 22 47 / .2));
+      }
+      .hero-bottom { position: absolute; inset: auto 0 0; height: 150px; background: linear-gradient(to top, #071426, transparent); z-index: 2; }
+      .wrap { width: min(1280px, calc(100vw - 48px)); margin: auto; position: relative; z-index: 3; }
+      .hero-grid { display: grid; grid-template-columns: .95fr 1.05fr; align-items: center; gap: 46px; }
+      .eyebrow { color: #67e8f9; font-size: 13px; font-weight: 950; text-transform: uppercase; letter-spacing: .24em; }
+      h1, h2, h3, p { margin: 0; }
+      h1 { margin-top: 18px; max-width: 800px; font-size: clamp(44px, 7vw, 88px); line-height: .96; letter-spacing: -.055em; }
+      .lead { margin-top: 24px; max-width: 700px; color: #dbeafe; font-size: clamp(18px, 2vw, 22px); line-height: 1.65; }
+      .actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+      .start-actions {
+        position: absolute; z-index: 5; left: 50%; bottom: 28px; transform: translateX(-50%);
+        width: min(960px, calc(100vw - 32px)); display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+      }
+      .start-action {
+        border: 1px solid rgb(255 255 255 / .2); border-radius: 20px; background: rgb(6 22 47 / .82);
+        color: white; padding: 16px; box-shadow: 0 20px 60px rgb(0 0 0 / .26); backdrop-filter: blur(16px);
+      }
+      .start-action strong { display: block; margin-top: 8px; font-size: 20px; }
+      .start-action.order { background: #67e8f9; color: #06162f; border-color: rgb(103 232 249 / .5); }
+      .hero-card {
+        border: 1px solid rgb(255 255 255 / .22); border-radius: 32px; background: rgb(255 255 255 / .9);
+        padding: 22px; box-shadow: 0 28px 80px rgb(8 47 73 / .45);
+        transform: scale(calc(.82 + var(--hero-progress, 0) * .18));
+        transition: transform .08s linear;
+      }
+      .hero-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 24px; display: block; }
+      section { padding: 82px 24px; }
+      .split { display: grid; grid-template-columns: .8fr 1.2fr; gap: 52px; }
+      h2 { margin-top: 14px; font-size: clamp(34px, 5vw, 58px); line-height: 1; letter-spacing: -.045em; }
+      .copy { display: grid; gap: 24px; color: #cbd5e1; font-size: 18px; line-height: 1.75; }
+      .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      .stat { border: 1px solid rgb(103 232 249 / .15); border-radius: 16px; background: rgb(103 232 249 / .1); padding: 18px; color: #cffafe; font-weight: 900; }
+      .dark { background: #020617; }
+      .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 42px; }
+      .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+      .card {
+        border: 1px solid rgb(255 255 255 / .1); border-radius: 22px; background: rgb(255 255 255 / .045);
+        padding: 26px;
+      }
+      .card h3 { margin-top: 26px; font-size: 22px; }
+      .card p { margin-top: 14px; color: #cbd5e1; line-height: 1.65; font-size: 15px; }
+      .icon { color: #fcd34d; font-size: 30px; }
+      .market { display: grid; grid-template-columns: .9fr 1.1fr; gap: 42px; align-items: start; }
+      .product-card { background: #0b213f; border-color: rgb(103 232 249 / .16); }
+      .chips { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 34px; }
+      .chip { border: 1px solid rgb(103 232 249 / .22); background: rgb(255 255 255 / .06); border-radius: 999px; padding: 9px 15px; font-size: 14px; font-weight: 900; }
+      .category-panel { margin-top: 38px; border: 1px solid rgb(103 232 249 / .16); border-radius: 24px; background: rgb(255 255 255 / .045); padding: 24px; }
+      .category-panel h3 { margin: 0; font-size: 28px; text-transform: uppercase; }
+      .category-buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 22px; }
+      .category-button { border: 1px solid rgb(103 232 249 / .16); border-radius: 14px; background: #0b213f; color: #ecfeff; padding: 14px 16px; font-size: 15px; font-weight: 950; text-align: left; }
+      .white { background: #fff; color: #020617; }
+      .white .eyebrow { color: #1d4ed8; }
+      .division { background: #f8fafc; color: #020617; border: 1px solid #e2e8f0; transition: .2s ease; }
+      .division p { color: #475569; }
+      .contact-panel {
+        display: grid; grid-template-columns: 1.1fr .9fr; gap: 34px; border: 1px solid rgb(103 232 249 / .15);
+        border-radius: 32px; background: linear-gradient(135deg, #0b2f60, #06162f); padding: 44px;
+        box-shadow: 0 28px 80px rgb(8 47 73 / .32);
+      }
+      .contact-line { color: #dbeafe; line-height: 2; font-size: 17px; }
+      @media (max-width: 980px) {
+        .nav-links { display: none; }
+        .hero-grid, .split, .market, .contact-panel { grid-template-columns: 1fr; }
+        .grid4 { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 640px) {
+        .button.nav-cta { display: none; }
+        .grid4, .grid2, .stats, .start-actions, .category-buttons { grid-template-columns: 1fr; }
+        .start-actions { position: relative; left: auto; bottom: auto; transform: none; margin-top: 28px; }
+        .wrap { width: min(100% - 32px, 1280px); }
+        section, .hero { padding-left: 16px; padding-right: 16px; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="#" class="brand"><span class="brand-logo"><img src="./public/aklan-primary-hero.png?v=2" alt="Aklan logo"></span><span>Aklan International</span></a>
+        <div class="nav-links">
+          <a href="#services">Services</a><a href="#marketplace">Marketplace</a><a href="#solar">Aklan Solar</a><a href="#multitech">Multitech</a><a href="#contact">Contact</a>
+        </div>
+        <a class="button nav-cta" href="#marketplace">Order Online</a>
+      </div>
+    </nav>
+    <main>
+      <section class="hero">
+        <div class="slide" style="background-image:url('./public/aklan-slide-solar-install.jpg')"></div>
+        <div class="slide" style="background-image:url('./public/aklan-slide-panel-workshop.jpg')"></div>
+        <div class="slide" style="background-image:url('./public/aklan-slide-power-panel.jpg')"></div>
+        <div class="slide" style="background-image:url('./public/aklan-slide-solar-rooftop.jpg')"></div>
+        <div class="slide" style="background-image:url('./public/aklan-slide-solar-array.jpg')"></div>
+        <div class="slide" style="background-image:url('./public/aklan-slide-solar-sun.jpg')"></div>
+        <div class="slide" style="background-image:url('./public/aklan-primary-hero.png?v=2')"></div>
+        <div class="hero-bottom"></div>
+        <div class="wrap hero-grid">
+          <div>
+            <p class="eyebrow">Electrical engineering | supply | online ordering</p>
+            <h1>Aklan International (Pvt) Ltd</h1>
+            <p class="lead">Total electrical engineering solutions, electrical equipment supply, industrial electrical products, and technical services for customers across Sri Lanka.</p>
+          </div>
+          <div class="hero-card"><img src="./public/aklan-primary-hero.png?v=2" alt="Aklan International electrical engineering artwork"></div>
+        </div>
+        <div class="start-actions">
+          <a class="start-action" href="#solar"><span class="eyebrow" style="color:#fcd34d">Division</span><strong>Aklan Solar</strong></a>
+          <a class="start-action" href="#multitech"><span class="eyebrow">Division</span><strong>Multitech Technologies</strong></a>
+          <a class="start-action order" href="#marketplace"><span class="eyebrow" style="color:#06162f">Marketplace</span><strong>Order Now</strong></a>
+        </div>
+      </section>
+      <section id="about"><div class="wrap split"><div><p class="eyebrow">Who we are</p><h2>A reliable partner for electrical engineering and industrial supply.</h2></div><div class="copy"><p>Aklan International (Pvt) Ltd provides total electrical engineering solutions, world-renowned engineering products, and technical services for a broad customer base.</p><p>The company supports electrical equipment supply, online ordering, panel-board related projects, after-sales service, and industrial product requirements with a professional engineering focus.</p><div class="stats"><div class="stat">1,500+ customers</div><div class="stat">24/7 hotline</div><div class="stat">Online shop</div></div></div></div></section>
+      <section class="dark" id="services"><div class="wrap"><p class="eyebrow">Services</p><h2>Electrical solutions for projects, panels, plants, and supply chains.</h2><div class="grid4"><article class="card"><div class="icon">⚡</div><h3>Electrical Engineering Solutions</h3><p>Total electrical engineering support, project coordination, and technical delivery for industrial and commercial customers.</p></article><article class="card"><div class="icon">▣</div><h3>Electrical Equipment Supply</h3><p>Supply of switchgear, protection devices, panel accessories, copper items, sockets, meters, and related components.</p></article><article class="card"><div class="icon">▤</div><h3>Industrial Electrical Products</h3><p>Products and systems for panel builders, contractors, factories, construction projects, and infrastructure applications.</p></article><article class="card"><div class="icon">◆</div><h3>Engineering & Technical Services</h3><p>After-sales support, technical guidance, panel-board related services, and dependable service access island-wide.</p></article></div></div></section>
+      <section id="marketplace"><div class="wrap market"><div><p class="eyebrow">Marketplace</p><h2>Browse and order electrical equipment online.</h2><p class="lead">Shop low voltage products, contactors, breakers, protection devices, industrial sockets, panel meters, copper items, and related electrical components.</p><div class="actions"><a class="button" href="mailto:sales@aklan.lk">Place Order</a><a class="button secondary" href="#contact">Contact Sales</a></div></div><div class="grid2"><article class="card product-card"><div class="icon">✓</div><h3>MCB / RCCB</h3><p>Low voltage protection for residential, commercial, and industrial panels.</p></article><article class="card product-card"><div class="icon">◎</div><h3>MCCB / ACB</h3><p>Molded-case and air circuit breaker solutions for heavier applications.</p></article><article class="card product-card"><div class="icon">●</div><h3>Contactors</h3><p>Contactors, mini contactors, DOL items, and capacitor switching solutions.</p></article><article class="card product-card"><div class="icon">🛒</div><h3>Electrical Accessories</h3><p>Request quotations or quick orders for related electrical components.</p></article></div></div><div class="wrap category-panel"><h3>All Categories</h3><div class="category-buttons"><button class="category-button">Legrand Switches</button><button class="category-button">Industrial Sockets</button><button class="category-button">Lightning Conductors</button><button class="category-button">Copper</button><button class="category-button">Capacitors</button><button class="category-button">Low Voltage</button><button class="category-button">Hensel Enclosures</button><button class="category-button">Special</button></div></div></section>
+      <section class="white"><div class="wrap"><p class="eyebrow">Divisions</p><h2>Sub-companies under Aklan International (Pvt) Ltd.</h2><div class="grid2" style="margin-top:40px"><article class="card division" id="solar"><div class="icon">☀</div><h3>Aklan Solar</h3><p>Renewable energy and solar solutions division for sustainable power systems, solar accessories, and project support.</p><a class="button" style="margin-top:24px" href="mailto:sales@aklan.lk">View division</a></article><article class="card division" id="multitech"><div class="icon">▧</div><h3>Multitech Technologies</h3><p>Technology and engineering-related division supporting modern technical solutions and industrial innovation.</p><a class="button" style="margin-top:24px" href="mailto:sales@aklan.lk">View division</a></article></div></div></section>
+      <section id="contact"><div class="wrap contact-panel"><div><p class="eyebrow" style="color:#fcd34d">Contact / Quick Order</p><h2>Need electrical products or engineering support?</h2><p class="lead">Contact Aklan International for product availability, quotation requests, online ordering support, and technical assistance.</p></div><div class="contact-line">+94 112 199 199<br>sales@aklan.lk<br>No. 16, Pagoda Road, Nugegoda, Sri Lanka<br><br><a class="button" href="mailto:sales@aklan.lk">Request Quote</a></div></div></section>
+    </main>
+    <script>
+      const setHeroProgress = () => {
+        document.documentElement.style.setProperty(
+          "--hero-progress",
+          Math.min(window.scrollY / 360, 1).toFixed(3)
+        );
+      };
+      addEventListener("scroll", setHeroProgress, { passive: true });
+      setHeroProgress();
+    </script>
+  </body>
+</html>
